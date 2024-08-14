@@ -1,13 +1,22 @@
-import React from "react";
-import blogData from "../data/blog";
-
-console.log(blogData);
+import React from 'react';
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
 
 function App() {
+  const blogName = "My Awesome Blog";
+  const aboutText = "Welcome to my blog about awesome things!";
+  const posts = [
+    { id: 1, title: "First Post", date: "2023-08-14", preview: "This is my first post..." },
+    { id: 2, title: "Second Post", date: "2023-08-15", preview: "This is my second post..." },
+    // ... more posts
+  ];
+
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header name={blogName} />
+      <About about={aboutText} />
+      <ArticleList posts={posts} />
     </div>
   );
 }
